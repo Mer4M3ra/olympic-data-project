@@ -1,2 +1,2 @@
-# olympics-data-project-week3
+# olympic-data-project
 repository for week 3
