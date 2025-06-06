@@ -49,4 +49,7 @@
 2. How many rows were returned use lens() to find out
 #### Answers
 1. These filters show the first 5 woman in the olympics then they show the first 5 woman above the age of 35 with the categories of "Name", "Age" and "Sport"
-2. there is a total of 
+2. there is a total of 90906 rows returned
+### Task 2
+#### Questions
+b
