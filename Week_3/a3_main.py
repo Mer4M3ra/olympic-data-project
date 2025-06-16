@@ -10,8 +10,8 @@ print(female_athletes.head())
 older_athletes = df[df['Age'] > 35]
 print(older_athletes[['Name', 'Age', 'Sport']].head())
 
-print("there is a total of " + str(len(female_athletes)) + " Female athletes")
-print("there is a total of " + str(len(older_athletes)) + " Athletes above the age of 35")
+print("there is a total of " + str(len(female_athletes.head())) + " Female athletes")
+print("there is a total of " + str(len(older_athletes.head())) + " Athletes above the age of 35")
 
 # Female athletes over 30
 combo_filter = df[(df['Sex'] == 'F') & (df['Age'] > 30)]
@@ -23,6 +23,41 @@ basketball_males = df[(df['Sex'] == 'M') & (df['Sport'] == 'Basketball')]
 # Prints Basketball males
 print(basketball_males.head())
 # Australian swimmers
-AustraliaSwimmers = df[(df['Team']== 'Australia') & (df['Sport'] == 'Swimming')]
+AustraliaSwimmers = df[(df['Team'] == 'Australia') & (df['Sport'] == 'Swimming')]
 # Prints the first 5 australian swimmers
 print(AustraliaSwimmers.head())
+# Sort by age
+sorted_by_age = df.sort_values(by='Age', ascending=False)
+print(sorted_by_age[['Name', 'Age', 'Sport']].head())
+
+# Sort by weight
+sorted_by_weight = df.sort_values(by='Weight', ascending=False)
+print(sorted_by_weight[['Name', 'Weight', 'Sport']].head())
+
+sorted_by_weight_height_10 = df.sort_values(by=['Height', 'Weight'], ascending=False)
+print(sorted_by_weight_height_10[['Name', 'Height', 'Weight', 'Sport']].head(10))
+
+# Count participants in each sport
+sport_counts = df['Sport'].value_counts()
+print(sport_counts.head())
+
+# Count medals per team
+medals_by_team = df[df['Medal'].notnull()].groupby('Team')['Medal'].count()
+print(medals_by_team.sort_values(ascending=False).head())
+
+
+
+top_female_sport = df[df['Sex'] == 'F']['Sport'].value_counts()
+print(top_female_sport.head(1))
+
+# Average height per sport
+avg_height = df.groupby('Sport')['Height'].mean().sort_values(ascending=False)
+print(avg_height.head())
+
+# Median age by year
+median_age_by_year = df.groupby('Year')['Age'].median()
+print(median_age_by_year.tail())
+
+# average weight by sex and sport
+avg_sex_sport = df.groupby(['Sport', 'Sex'])['Weight'].mean().sort_values(ascending=False)
+print(avg_sex_sport.head())

@@ -49,7 +49,28 @@
 2. How many rows were returned use lens() to find out
 #### Answers
 1. These filters show the first 5 woman in the olympics then they show the first 5 woman above the age of 35 with the categories of "Name", "Age" and "Sport"
-2. there is a total of 90906 rows returned
+2. there is a total of 10 rows returned
 ### Task 2
+#### Qustions
+1. Write a filter for athletes from australia in swimming
+#### Answers
+1. the filter i made is "***AustraliaSwimmers = df[(df['Team'] == 'Australia') & (df['Sport'] == 'Swimming')]***"
+### Task 3
 #### Questions
-b
+1. Sort by height then weight and display top 10
+#### Answers
+1. the filter i made is "***sorted_by_weight_height_10 = df.sort_values(by=['Height', 'Weight'], ascending=False)***"
+### Task 4
+#### Questions
+1. which sport had the most female particapants?
+#### Answers
+1. the filter i made is "***top_female_sport = df[df['Sex'] == 'F']['Sport'].value_counts()***"
+### Task 5
+#### Questions
+1. Create a new group  that shows average weight by sex and sport
+#### Answers
+1. "***avg_sex_sport = df.groupby(['Sport', 'Sex'])['Weight'].mean().sort_values(ascending=False)***"
+### Task 6
+#### Questions
+1. 
+
