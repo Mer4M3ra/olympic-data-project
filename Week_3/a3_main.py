@@ -61,3 +61,11 @@ print(median_age_by_year.tail())
 # average weight by sex and sport
 avg_sex_sport = df.groupby(['Sport', 'Sex'])['Weight'].mean().sort_values(ascending=False)
 print(avg_sex_sport.head())
+
+# Filter gymnasts and save to new CSV
+gymnasts = df[df['Sport'] == 'Gymnastics']
+gymnasts.to_csv('gymnastics_athletes.csv', index=False)
+
+#Filter Athletes who are under 18
+Athletes_under_18 = df[df['Age'] < 18]
+Athletes_under_18.to_csv('Under_18_Athletes.csv', index=False)
