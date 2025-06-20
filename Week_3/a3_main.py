@@ -69,3 +69,8 @@ gymnasts.to_csv('gymnastics_athletes.csv', index=False)
 #Filter Athletes who are under 18
 Athletes_under_18 = df[df['Age'] < 18]
 Athletes_under_18.to_csv('Under_18_Athletes.csv', index=False)
+
+
+#Filter Athletes who won a Gold Medal
+Gold_athletes = df[df['Medal'] == 'Gold']
+Gold_athletes.to_csv('Gold_medal_Athletes.csv', index=False)

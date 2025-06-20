@@ -72,5 +72,19 @@
 1. "***avg_sex_sport = df.groupby(['Sport', 'Sex'])['Weight'].mean().sort_values(ascending=False)***"
 ### Task 6
 #### Questions
-1. 
-
+1. All athletes under 18
+2. All athletes who won a gold medal
+#### Answers
+1. '***Athletes_under_18.to_csv('Under_18_Athletes.csv', index=False)***'
+2. '***Gold_athletes.to_csv('Gold_medal_Athletes.csv', index=False)***'
+### **📚Reflection**
+#### Questions
+1. What was the easiest filtering task?
+2. What was the most difficult grouping or sorting task?
+3. What trends surprised you in the Olympic data?
+4. What kinds of real-world questions could this kind of analysis help answer?
+#### Answers
+1. the easiest was certainly the first task as it was sort of like the basics
+2. the most difficult sorting/grouping task was task 5 as i was mostly confused on what to do
+3. i was surprised that athletics had the most participants
+4. it could help answer questions such as "whos the tallest or heaviest athlete"
